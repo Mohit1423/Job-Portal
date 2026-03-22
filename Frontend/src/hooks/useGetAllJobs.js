@@ -9,7 +9,7 @@ function useGetAllJobs(keyword = "") {
   useEffect(  () => {
     const fetchAllJobs = async () => {
     try{
-        const response = await axios.get("http://localhost:4000/api/v1/job/get",{withCredentials:true})
+        const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/v1/job/get`,{withCredentials:true})
         if(response.data.success){
             
             dispatch(setAllJobs(response.data.jobs));

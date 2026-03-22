@@ -23,7 +23,7 @@ import { Loader2 } from "lucide-react";
      
     try{
       
-      const response = await axios.post("http://localhost:4000/api/v1/user/login",data,{ withCredentials: true })
+      const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/v1/user/login`,data,{ withCredentials: true })
       toast.success(response.data.message);
       dispatch(setAuthUser(response.data.user))
       if(response.data.user.role === "recruiter"){

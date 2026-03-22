@@ -9,7 +9,7 @@ function useGetJobById(id) {
       const fetchAllJobs = async () => {
   
       try{
-          const response = await axios.get(`http://localhost:4000/api/v1/job/get/${id}`,{withCredentials:true})
+          const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/v1/job/get/${id}`,{withCredentials:true})
           if(response.data.sucess){
               dispatch(setSingleJob(response.data.job));
           }
