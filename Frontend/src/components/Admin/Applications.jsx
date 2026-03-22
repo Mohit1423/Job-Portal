@@ -16,7 +16,7 @@ function Applications() {
     useEffect(() => {
         const fetchApplicants = async () => {
         try{
-        const response = await axios.get(`http://localhost:4000/api/v1/application/getUsers/${jobId}`,{
+        const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/v1/application/getUsers/${jobId}`,{
             withCredentials: true,
         })
         setApplicants(response.data.applications)
@@ -30,7 +30,7 @@ function Applications() {
 
      const handleStatus = async (_id,status)=>{
         try{
-            const response = await axios.post(`http://localhost:4000/api/v1/application/updateStatus/${_id}`,{status}, {
+            const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/v1/application/updateStatus/${_id}`,{status}, {
               withCredentials: true,
           })
           

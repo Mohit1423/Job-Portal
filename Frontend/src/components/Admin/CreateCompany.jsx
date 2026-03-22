@@ -14,7 +14,7 @@ function CreateCompany() {
        
         try{
         
-            const response = await axios.post("http://localhost:4000/api/v1/company/register",{name:companyName}, {
+            const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/v1/company/register`,{name:companyName}, {
               withCredentials: true,
           })
             console.log(response)

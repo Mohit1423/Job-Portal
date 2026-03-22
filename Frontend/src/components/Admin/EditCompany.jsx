@@ -19,7 +19,7 @@ function EditCompany() {
     const getCompanyData = async () => {
     try{
 
-      const response = await axios.get(`http://localhost:4000/api/v1/company/get/${companyId}`,{
+      const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/v1/company/get/${companyId}`,{
           withCredentials: true,
       })
       setCompany(response.data.company)
@@ -39,7 +39,7 @@ function EditCompany() {
     const data = Object.fromEntries(formData.entries());
     
     try{
-      const response = await axios.post(`http://localhost:4000/api/v1/company/update/${companyId}`,data, {
+      const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/v1/company/update/${companyId}`,data, {
         headers: { 'Content-Type': "multipart/form-data" },
         withCredentials: true,
     })

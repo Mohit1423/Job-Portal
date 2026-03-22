@@ -13,7 +13,7 @@ function CreateJobs() {
     useEffect(()=>{
         const getCompanies = async () => {
             try{
-            const response = await axios.get(`http://localhost:4000/api/v1/company/get`,{
+            const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/v1/company/get`,{
                 withCredentials: true,
             })
             if(response.data.companies.length == 0){
@@ -42,7 +42,7 @@ function CreateJobs() {
         const data = Object.fromEntries(formData.entries());
         console.log(data)
         try{
-            const response = await axios.post(`http://localhost:4000/api/v1/job/post`,data, {
+            const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/v1/job/post`,data, {
               withCredentials: true,
           })
           

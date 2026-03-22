@@ -15,7 +15,7 @@ function Companies() {
     useEffect(()=>{
         const getCompanies = async () => {
             try{
-            const response = await axios.get(`http://localhost:4000/api/v1/company/get`,{
+            const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/v1/company/get`,{
                 withCredentials: true,
             })
             setUserCompanies(response.data.companies)
