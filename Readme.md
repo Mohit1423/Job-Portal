@@ -152,4 +152,4 @@ It helped me understand how real-world applications handle:
 
    
    
- Deployment Link : job-portal-six-amber.vercel.app
+ Deployment Link : https://job-portal-six-amber.vercel.app
